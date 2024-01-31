@@ -8,10 +8,16 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class SchedulingJobs {
 
-    // Running at a fixed rate
+    // Running at a fixed rate (5 seconds)
     @Scheduled(timeUnit = TimeUnit.SECONDS, fixedRate = 5)
     public void job() {
         System.out.println("Running job");
+    }
+
+    // Running at a fixed rate (5 seconds) after 5 seconds of initial delay
+    @Scheduled(timeUnit = TimeUnit.SECONDS, fixedRate = 5, initialDelay = 5)
+    public void delayedRecursiveJob() {
+        System.out.println("Running job 2");
     }
 
     // Runs every day at 12:00 AM
