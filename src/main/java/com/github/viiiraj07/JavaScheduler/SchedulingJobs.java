@@ -13,4 +13,10 @@ public class SchedulingJobs {
     public void job() {
         System.out.println("Running job");
     }
+
+    // Runs every day at 12:00 AM
+    @Scheduled(cron = "0 0 0 * * *")
+    public void cronJob() {
+        System.out.println("Running cron job");
+    }
 }
